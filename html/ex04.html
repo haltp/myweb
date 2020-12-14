@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/ex04.html 1214</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend><h1>개인 정보 입력</h1></legend>
+        <form action="ex04.jsp" method="get">
+            아 이 디: <input type="text" name="user_name" id="user_name">
+            <input type="button" value="ID중복검사" onclick="alert('회원가입 가능한 아이디입니다.')">
+            <p></p>
+            생년월일: <input type="date" name="birthday">
+            <p></p>
+            성별: <input type="radio" name="sex" value="남성" checked>남성
+            <input type="radio" name="sex" value="여성">여성
+            <p></p>
+            E-mail: <input type="email" name="myemail">
+            <p></p>
+            메일수신: <input type="radio" name="agree" value="수신동의" checked>수신동의
+            <input type="radio" name="agree" value="수신거부">수신거부
+            <p></p>
+            핸드폰: <select name="phone">
+                <option value="010" selected>010</option>
+                <option value="011" selected>011</option>
+                <option value="017" selected>017</option>
+                <option value="019" selected>019</option>
+            </select>
+            - <input type="text" name="number1" id="number1">
+            - <input type="text" name="number2" id="number2">
+            <p></p>
+            직업: <select name="job">
+                <option value="학생" selected>학생</option>
+                <option value="주부" selected>주부</option>
+                <option value="회사원" selected>회사원</option>
+                <option value="사업가" selected>사업가</option>
+            </select>
+            <p></p>
+            취미: <input type="checkbox" name="hobby" value="쇼핑" checked>쇼핑
+            <input type="checkbox" name="hobby" value="인터넷">인터넷
+            <input type="checkbox" name="hobby" value="음악감상">음악감상
+            <input type="checkbox" name="hobby" value="독서">독서
+            <input type="checkbox" name="hobby" value="스포츠">스포츠
+            <p></p>
+            자기소개: <textarea rows="5" cols="50" name="comment"></textarea>
+    </fieldset>
+    <p></p>
+    <input type="submit" value="등록">
+    <input type="reset" value="초기화">
+    </form>
+</body>
+
+</html>
