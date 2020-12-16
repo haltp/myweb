@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/js.html</title>
+</head>
+
+<body>
+    <div id="show">Hello</div>
+    <ul id="fruit"></ul>
+    <table id="tbl" border="1">
+        <tr>
+            <td>name</td>
+            <td>age</td>
+        </tr>
+        <tr>
+            <td>Hong</td>
+            <td>15</td>
+        </tr>
+    </table>
+    <script>
+        var name = document.getElementById('show').innerHTML;
+        console.log(name);
+        document.getElementById('show').innerHTML = "World";
+
+        var divTag = document.createElement("div");
+        divTag.innerHTML = "Nice"; //<div>Nice</div>
+
+        document.getElementById('show').append(divTag);
+
+        var ulTag = document.createElement("li");
+        var ulTag1 = document.createElement("li");
+        ulTag.innerHTML = "Apple";
+        ulTag1.innerHTML = "Orange";
+
+        document.getElementById('fruit').append(ulTag);
+        document.getElementById('fruit').append(ulTag1);
+        //////////////////////////////
+        var grade = 1;
+        for (var i = 1; i <= 100; i++) {
+            grade+=grade*i;
+            console.log(grade);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
