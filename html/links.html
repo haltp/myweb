@@ -5,6 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html/links.html</title>
+    <style>
+        a:link {
+            color: blueviolet;
+            text-decoration: underline;
+        }
+        a:visited {
+            color: blanchedalmond;
+        }
+        /* 마우스 올리기: hover */
+        a:hover { 
+            text-decoration: overline;
+        }
+        /* 마우스 클릭순간 active */
+        a:active {
+            color: black;
+        }
+        ul >li:hover {
+            color: blueviolet;
+        }
+        ol>li:nth-last-child(1) {
+            background: brown;
+        }
+        li:nth-child(1) {
+            border: 2px solid green;
+        }
+        li:nth-of-type(2) {
+            border: 2px dotted red;
+        }
+
+    </style>
 </head>
 
 <body>
