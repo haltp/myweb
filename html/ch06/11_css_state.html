@@ -16,7 +16,8 @@
 <body>
     <h2>states pseudo-classes</h2>
     <h3>문제) 대한민국 수도는?</h3>
-    <p>정답 작성 : <input type="text"></p>
+    <p>정답 작성 : <input type="text" name="answer"></p>
+    <input type="submit" value="제출">
     <h2>answer</h2>
     힌트보기 : <input type="checkbox">
     <div class="d1">
@@ -26,5 +27,13 @@
     <div class="d2">
         서울
     </div>
+    <script>
+        var a = document.getElementsByName("answer");
+        if(a == "서울") {
+            console.log("정답입니다.");
+        } else {
+            console.log("오답입니다.");
+        }
+    </script>
 </body>
 </html>
