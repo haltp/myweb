@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.html</title>
+</head>
+
+<body>
+    <table border="1" id="tbl">
+        <tr>
+            <td>
+                <label for="id">ID</label>
+                <input type="checkbox" name="id" id="id">
+            </td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+        </tr>
+        <!-- <tr>
+            <td>
+                <label for="id">ID</label>
+                <input type="checkbox" name="id" id="id">
+            </td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+        </tr> -->
+    </table>
+    <div id="show"></div>
+    <script>
+        // let table = document.createElement('table');
+        // table.setAttribute('border','1');
+        // let tr = document.createElement('tr');
+        // let td = document.createElement('td');
+        // let label = document.createElement('label');
+        // label.setAttribute('for', 'id');
+        // label.innerHTML = 'ID ';
+        // let input = document.createElement('input');
+        // input.setAttribute('type', 'checkbox', 'name', 'id');
+
+        // let td1 = document.createElement('td');
+        // td1.innerHTML = '홍길동';
+
+        // let td2 = document.createElement('td');
+        // td2.innerHTML = '20세';
+
+        // let td3 = document.createElement('td');
+        // td3.innerHTML = '독서';
+
+        // let td4 = document.createElement('td');
+        // let button = document.createElement('button');
+        // button.innerHTML = 'OK';
+
+        // console.log(table);
+        // table.append(tr);
+        // tr.append(td);
+        // td.append(label);
+        // td.append(input);
+        // tr.append(td1);
+        // tr.append(td2);
+        // tr.append(td3);
+        // td4.append(button);
+        // tr.append(td4);
+        // document.getElementById('show').append(table);
+
+        let members = [];
+
+        for (let i = 1; i <= 3; i++) {
+            let member = {};
+            member.name = '홍길동' + i;
+            member.age = 20 + i + '세';
+            member.hobby = '독서' + i;
+            members.push(member);
+        }
+        console.log(members);
+
+        let table = document.createElement('table');
+        table.setAttribute('border', '1');
+
+        members.forEach(function (a, b, c) {
+            let tr = document.createElement('tr');
+            let label = document.createElement('label');
+            label.setAttribute('for', 'id');
+            label.innerHTML = 'ID ';
+            let input = document.createElement('input');
+            input.setAttribute('type', 'checkbox');
+            let td = document.createElement('td');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+            let button = document.createElement('button');
+            button.innerHTML = 'OK';
+
+            td3.append(label);
+            td3.append(input);
+            td4.append(button);
+
+            td.innerHTML = a.name;
+            td1.innerHTML = a.age;
+            td2.innerHTML = a.hobby;
+
+            tr.append(td3);
+            tr.append(td);
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td4);
+            table.append(tr);
+        });
+
+        console.log(table);
+        document.getElementById('show').append(table);
+    </script>
+</body>
+
+</html>

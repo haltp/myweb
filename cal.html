@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let s1 = document.getElementById('show');
+        let h = document.createElement('h1');
+        let h1 = document.createElement('h1');
+        let h2 = document.createElement('h1');
+
+        s1.append(h);
+        s1.append(h1);
+        s1.append(h2);
+
+        h.innerHTML = 'Sun';
+        h1.innerHTML = 'Mon';
+        h2.innerHTML = 'Tue';
+
+        document.write('==========================')
+
+        let t = document.createElement('table');
+        t.setAttribute('border', '1');
+        let tr = document.createElement('tr');
+
+        let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'];
+        for (let i = 0; i < days.length; i++) {
+            let th = document.createElement('th');
+            th.innerHTML = days[i];
+            tr.append(th);
+        }
+        s1.append(t);
+        t.append(tr);
+
+
+        let tr1 = document.createElement('tr');
+        t.setAttribute('style', 'text-align: center;');
+        for (let i = 1; i <= 31; i++) {
+            let td = document.createElement('td');
+            td.innerHTML = i;
+            tr1.append(td);
+            if (i % 7 == 0) {
+                // td.style.backgroundColor='blue';
+                td.setAttribute('style', 'background: blue; color: white;');
+                t.append(tr1);
+                tr1 = document.createElement('tr');
+            }
+            if(i % 7 ==1) {
+                td.style.backgroundColor='red';
+            }
+        }
+        t.append(tr1);
+        document.getElementById('show').append(t);
+
+    </script>
+</body>
+
+</html>
