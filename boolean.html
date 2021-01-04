@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let trueOrFalse = (10 < 9); //거짓입니다
+        trueOrFalse = 'a'; //값을 가지면 참입니다 뜬다
+        trueOrFalse = '0'; //참입니다
+        trueOrFalse = '-1'; //참입니다
+        trueOrFalse = null;//거짓입니다
+        if (trueOrFalse) {
+            console.log('참입니다');
+        } else {
+            console.log('거짓입니다');
+        }
+
+        let val1 = 100;
+        let val2 = '100'; //==동일합니다 ===다릅니다 뜬다 타입이 달라서
+        if (!(val1 === val2)) { //==이면 값만 비교 ===이면 값과 타입을 비교 //비교할땐 != !== 부정의 의미
+            console.log('동일합니다');
+        } else {
+            console.log('다릅니다');
+        }
+
+        let result = val1 > 100 ? '100보다 크다' : '100보다 작다'; //참이면 콜론 앞에 거짓이면 콜론뒤에 출력
+        result = 'hello';
+        console.log(result);
+
+        result = new Number(10);
+        result = new Object();
+
+        result = {
+            name: 'Hong',
+            age: 20,
+            getName: function () {
+                return this.name;
+            },
+            getInfo: function () {
+                console.log(this.name + '-' + this.age);
+                // return this.name+'-'+this.age;
+            },
+            get getAge() {
+                return this.age;
+            },
+            set setAge(age) {
+                this.age=age;
+            }
+        }
+        result.setAge = 25;
+        result.hobby = 'reading';
+        result.getInfo();
+
+        delete result.hobby;
+
+        //배열일 경우 for of...
+        //오브젝트일 경우 for in...
+        let person = {
+            name: 'Hwang',
+            age: 10,
+            address: 'Seoul'
+        }
+        let vals = Object.values(person);
+        console.log(vals);
+        vals = JSON.stringify(person);
+
+        let persons = [person];
+
+        let person1 = {
+            name: 'Hong',
+            age: 10,
+            address: 'Seoul'
+        }
+
+        persons.push(person1);
+
+        for (person of persons) {
+            for (field in person) {
+                console.log(field, '-', person[field]);
+            }
+        }
+
+        // let v = result;
+        // result.age = 15;
+
+        // console.log(v.name, v.age);
+
+        // result = 'hello';
+        // v = result;
+        // result = 'world';
+        // console.log(result);
+    </script>
+</body>
+
+</html>

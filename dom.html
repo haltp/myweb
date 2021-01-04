@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <!-- <div class="show">
+        <h1>h1 tag</h1>
+        <h2>h2 tag</h2>
+        <h3>h3 tag</h3>
+        <p>p tag</p>
+    </div>
+    <div class="show">
+        Hello -->
+    <script>
+        //구구단을 생성
+        //function makeMulti(val);
+        //테이블 형식
+        let table = document.createElement('table');
+        table.setAttribute('border', '1');
+        let tr = document.createElement('tr')
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= 9; j++) {
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                td1.innerHTML = i;
+                td2.innerHTML = j;
+                tr.append(td1);
+                tr.append(td2);
+            }
+        }
+        
+        table.append(tr);
+
+        document.getElementById("show").append(table);
+    </script>
+</body>
+
+</html>

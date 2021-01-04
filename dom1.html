@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+
+        #animate {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">Move start!</button>
+    <div id="container">
+        <div id="animate"></div>
+        <script>
+
+
+            let btn = document.getElementById('btn');
+            btn.onclick = MoveStart; //MoveStart()로 쓰면 클릭안해도 이미실행되어있다
+            function MoveStart() {
+                console.log('start');
+                let animate = document.getElementById('animate');
+                let i = 0;
+                let myInterval = setInterval(() => {
+                    i += 2;
+                    animate.style.left = i + 'px';
+                    animate.style.top = i + 'px';
+                    if(i==350)
+                    clearInterval(myInterval);
+                }, 40);
+                myInterval = setInterval(() => {
+                    i -= 2;
+                    animate.style.right = i + 'px';
+                    animate.style.bottom = i + 'px';
+                }, 40);
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
