@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+
+        xhtp.onreadystatechange = function () {
+            console.log(xhtp.readyState, xhtp.status);
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset > record');
+                let table = document.createElement('table');
+                table.setAttribute('border', '1');
+                // let tr = document.createElement('tr');
+                // let names = ['번호', '이름', '성'];
+                // for (name of names) {
+                //     let th = document.createElement('th');
+                //     th.innerHTML += name;
+                //     table.append(th);
+            
+            for (let i = 0; i < result.length; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 0; j < result[i].childNodes.length; j++) {
+                    let td = document.createElement('td');
+                    let str = result[i].childNodes[j].childNodes[0].nodeValue;
+                    let textNode = document.createTextNode(str);
+
+                    td.appendChild(textNode);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+                
+                // show.innerHTML = xhtp.responseText;
+            }document.getElementById('show').appendChild(table);
+        }
+        }
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+    </script>
+</body>
+
+</html>
